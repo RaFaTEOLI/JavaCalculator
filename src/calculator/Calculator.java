@@ -168,8 +168,9 @@ public class Calculator extends JFrame implements ActionListener {
             }
             
             else if (e.getSource() == btDot){
-                 String a = ".";
-                tFtela.setText(".");
+                String a = ".";
+                numero += a;
+                tFtela.setText(numero);
             }
             
             else if (e.getSource() == btClear){
@@ -235,7 +236,7 @@ public class Calculator extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         Calculator calc = new Calculator();
-        calc.setSize(280, 210);
+        calc.setSize(250, 260);
         calc.setVisible(true);
     }
     
