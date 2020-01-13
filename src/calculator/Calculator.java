@@ -25,6 +25,8 @@ public class Calculator extends JFrame implements ActionListener {
         super("Calculator");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         
+        Font myFont = new Font("Consolas", Font.PLAIN, 18);
+        
         tFtela = new JTextField(20);
         bt0 = new JButton("0");
         bt1 = new JButton("1");
@@ -36,14 +38,38 @@ public class Calculator extends JFrame implements ActionListener {
         bt7 = new JButton("7");
         bt8 = new JButton("8");
         bt9 = new JButton("9");
-        btDIV = new JButton("/");
-        btVz = new JButton("*");
+        btDIV = new JButton("÷");
+        btVz = new JButton("x");
         btMi = new JButton("-");
         btPs = new JButton("+");
         btDot = new JButton(".");
         btEqls = new JButton("=");
         btClear = new JButton("AC");
         
+        bt0.setPreferredSize(new Dimension(300, 40));
+        
+        // Setting fonts
+        bt0.setFont(myFont);
+        bt1.setFont(myFont);
+        bt2.setFont(myFont);
+        bt3.setFont(myFont);
+        bt4.setFont(myFont);
+        bt5.setFont(myFont);
+        bt6.setFont(myFont);
+        bt7.setFont(myFont);
+        bt8.setFont(myFont);
+        bt9.setFont(myFont);
+        btDIV.setFont(myFont);
+        btVz.setFont(myFont);
+        btMi.setFont(myFont);
+        btPs.setFont(myFont);
+        btDot.setFont(myFont);
+        btEqls.setFont(myFont);
+        btClear.setFont(myFont);
+        
+        tFtela.setPreferredSize(new Dimension(300, 40));
+        tFtela.setFont(myFont);
+        tFtela.setHorizontalAlignment(SwingConstants.RIGHT);
         
         jPanel1 = new JPanel();
         jPanel2 = new JPanel();
@@ -53,7 +79,8 @@ public class Calculator extends JFrame implements ActionListener {
         janela = getContentPane();
         janela.setLayout(new BorderLayout());
         jPanel1.setLayout(new GridLayout(4,4));
-        jPanel2.setLayout(new FlowLayout());
+        jPanel2.setLayout(new GridLayout(1,1));
+        jPanel3.setLayout(new GridLayout(1,1));
         
         jPanel2.add(tFtela);
         
@@ -100,9 +127,10 @@ public class Calculator extends JFrame implements ActionListener {
         btEqls.addActionListener(this);
         btClear.addActionListener(this);
 
-        janela.add(jPanel1, BorderLayout.SOUTH);
+        janela.add(jPanel1, BorderLayout.PAGE_END);
         janela.add(jPanel3, BorderLayout.CENTER);
-        janela.add(jPanel2, BorderLayout.NORTH);
+        janela.add(jPanel2, BorderLayout.PAGE_START);
+        
         pack();  
     }
     
@@ -236,7 +264,7 @@ public class Calculator extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         Calculator calc = new Calculator();
-        calc.setSize(250, 260);
+        calc.setSize(250, 270);
         calc.setVisible(true);
     }
     
